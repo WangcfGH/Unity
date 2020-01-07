@@ -17,7 +17,7 @@ public class FeiPanManager : MonoBehaviour
 	/// <summary>
 	/// 创建飞盘
 	/// </summary>
-	void CreateFeiPan()
+	private void CreateFeiPan()
 	{
 		for (int i = 0; i < 5; i++)
 		{
@@ -29,7 +29,7 @@ public class FeiPanManager : MonoBehaviour
 	/// <summary>
 	/// 销毁飞盘
 	/// </summary>
-	void DestroyFeiPan()
+	private void DestroyFeiPan()
 	{
 		if (m_Transform)
 		{

@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 93404324}
   - component: {fileID: 93404326}
   - component: {fileID: 93404325}
+  - component: {fileID: 93404327}
   m_Layer: 0
   m_Name: GameResatrt
   m_TagString: Untagged
@@ -307,6 +308,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &93404327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93404323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27df58eb4026f544a9374ec2c2d69be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &134911090
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +465,7 @@ GameObject:
   - component: {fileID: 283742927}
   - component: {fileID: 283742929}
   - component: {fileID: 283742928}
+  - component: {fileID: 283742930}
   m_Layer: 0
   m_Name: GameTime
   m_TagString: Untagged
@@ -532,6 +546,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &283742930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283742926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7811dc15443d7b54b878d96d72798836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &415837391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 47509307932d1e140a2b4d9024d228e4,
@@ -549,6 +575,7 @@ GameObject:
   - component: {fileID: 464725982}
   - component: {fileID: 464725984}
   - component: {fileID: 464725983}
+  - component: {fileID: 464725985}
   m_Layer: 0
   m_Name: GameTotalScore
   m_TagString: Untagged
@@ -629,6 +656,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &464725985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464725981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2383cb048fb884bb8ed8e1a0eace4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &525432345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +1674,7 @@ GameObject:
   - component: {fileID: 2097737634}
   - component: {fileID: 2097737636}
   - component: {fileID: 2097737635}
+  - component: {fileID: 2097737637}
   m_Layer: 0
   m_Name: GameScore
   m_TagString: Untagged
@@ -1715,3 +1755,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2097737637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097737633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c6e87669c26bd4aa5ec71ed1d23ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,12 +6,16 @@ public class UIManager : MonoBehaviour
 {
 	public enum GAME_STATE{START, PLAYING, END};
 
+	private const float		TOTAL_TIME = 20.0f;	// 每局总时长
+
 	private GameObject		m_UiStart;			// 游戏开始UI
 	private GameObject		m_UiGame;			// 游戏进行UI
 	private GameObject		m_UiEnd;			// 游戏结束UI
 	private AudioSource		m_AudioSourceStart;	// 游戏开始声音源
 	private Weapon			m_Weapon;			// 武器脚本
 	private FeiPanManager	m_FeiPanManager;	// 飞盘管理器脚本
+	private GAME_STATE		m_GameState;		// 游戏状态
+	private float			m_StartTime;		// 点击开始游戏的时间戳
 
 	void Start()
 	{
@@ -33,6 +37,28 @@ public class UIManager : MonoBehaviour
 	}
 
 	/// <summary>
+	/// 获取本局剩余时长
+	/// </summary>
+	/// <returns></returns>
+	public float GetLastTime()
+	{
+		if (m_GameState == GAME_STATE.PLAYING)
+		{
+			return TOTAL_TIME - (Time.time - m_StartTime);
+		}
+
+		return 0;
+	}
+
+	/// <summary>
+	/// 游戏结束
+	/// </summary>
+	private void GameEnd()
+	{
+		ChangeGameState(GAME_STATE.END);
+	}
+
+	/// <summary>
 	/// 改变游戏状态
 	/// </summary>
 	/// <param name="state"></param>
@@ -50,6 +76,12 @@ public class UIManager : MonoBehaviour
 			m_Weapon.ChangeMoveState(false);
 			// 飞盘定时器状态切换
 			m_FeiPanManager.StopCreateFeiPan();
+			// 游戏状态切换
+			m_GameState = GAME_STATE.START;
+			// 开始时间切换
+			m_StartTime = 0;
+			// 分数值切换
+			m_Weapon.SetScore(0);
 		}
 		else if (state == GAME_STATE.PLAYING)
 		{
@@ -63,6 +95,14 @@ public class UIManager : MonoBehaviour
 			m_Weapon.ChangeMoveState(true);
 			// 飞盘定时器状态切换
 			m_FeiPanManager.StartCreateFeiPan();
+			// 游戏状态切换
+			m_GameState = GAME_STATE.PLAYING;
+			// 开始时间切换
+			m_StartTime = Time.time;
+			// 启动游戏状态切换
+			Invoke("GameEnd", TOTAL_TIME);
+			// 分数值切换
+			m_Weapon.SetScore(0);
 		}
 		else if (state == GAME_STATE.END)
 		{
@@ -76,6 +116,10 @@ public class UIManager : MonoBehaviour
 			m_Weapon.ChangeMoveState(false);
 			// 飞盘定时器状态切换
 			m_FeiPanManager.StopCreateFeiPan();
+			// 游戏状态切换
+			m_GameState = GAME_STATE.END;
+			// 开始时间切换
+			m_StartTime = 0;
 		}
 	}
 }

@@ -12,12 +12,10 @@ public class GameStart : MonoBehaviour
 		m_UiManager = GameObject.Find("UI").GetComponent<UIManager>();
 	}
 
-	void Update()
+	void OnMouseDown()
 	{
+		Debug.Log("GameStart OnMouseDown");
 		// 响应游戏开始
-		if (Input.GetMouseButtonDown(0))
-		{
-			m_UiManager.ChangeGameState(UIManager.GAME_STATE.PLAYING);
-		}
+		m_UiManager.ChangeGameState(UIManager.GAME_STATE.PLAYING);
 	}
 }
