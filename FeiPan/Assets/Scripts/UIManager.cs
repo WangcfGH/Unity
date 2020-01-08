@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
 	private FeiPanManager	m_FeiPanManager;	// 飞盘管理器脚本
 	private GAME_STATE		m_GameState;		// 游戏状态
 	private float			m_StartTime;		// 点击开始游戏的时间戳
+	private int				m_Score;			// 分数
 
 	void Start()
 	{
@@ -81,7 +82,7 @@ public class UIManager : MonoBehaviour
 			// 开始时间切换
 			m_StartTime = 0;
 			// 分数值切换
-			m_Weapon.SetScore(0);
+			SetScore(0);
 		}
 		else if (state == GAME_STATE.PLAYING)
 		{
@@ -102,7 +103,7 @@ public class UIManager : MonoBehaviour
 			// 启动游戏状态切换
 			Invoke("GameEnd", TOTAL_TIME);
 			// 分数值切换
-			m_Weapon.SetScore(0);
+			SetScore(0);
 		}
 		else if (state == GAME_STATE.END)
 		{
@@ -121,5 +122,23 @@ public class UIManager : MonoBehaviour
 			// 开始时间切换
 			m_StartTime = 0;
 		}
+	}
+
+	/// <summary>
+	/// 获取分数
+	/// </summary>
+	/// <returns></returns>
+	public int GetScore()
+	{
+		return m_Score;
+	}
+
+	/// <summary>
+	/// 设置分数
+	/// </summary>
+	/// <param name="nScore"></param>
+	public void SetScore(int nScore)
+	{
+		m_Score = nScore;
 	}
 }

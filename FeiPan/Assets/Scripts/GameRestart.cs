@@ -15,7 +15,6 @@ public class GameRestart : MonoBehaviour
 	// Update is called once per frame
 	void OnMouseDown()
 	{
-		Debug.Log("GameRestart OnMouseDown");
 		// 响应鼠标左键点击事件
 		m_UiManager.ChangeGameState(UIManager.GAME_STATE.START);
 	}

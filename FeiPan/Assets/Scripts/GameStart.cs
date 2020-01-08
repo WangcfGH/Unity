@@ -14,7 +14,6 @@ public class GameStart : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		Debug.Log("GameStart OnMouseDown");
 		// 响应游戏开始
 		m_UiManager.ChangeGameState(UIManager.GAME_STATE.PLAYING);
 	}

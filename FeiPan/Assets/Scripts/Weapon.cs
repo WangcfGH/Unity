@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
 	private LineRenderer	m_LineRenderer;		// LineRender
 	private AudioSource		m_SheJiAudioSource;	// 射击声音源
 	private bool			m_bCanMove;			// 是否可以移动
-	private int				m_nScore;			// 分数
+	private UIManager		m_UiManager;		// 界面管理器
 
 	void Start()
 	{
@@ -20,7 +20,9 @@ public class Weapon : MonoBehaviour
 		m_SheJiAudioSource = gameObject.GetComponent<AudioSource>();
 		m_LineTrans = m_Transform.Find("ShooterLine");
 		m_LineRenderer = m_LineTrans.gameObject.GetComponent<LineRenderer>();
-		m_nScore = 0;
+		
+		// 获取UI脚本
+		m_UiManager = GameObject.Find("UI").GetComponent<UIManager>();
 	}
 
 	void Update()
@@ -55,7 +57,8 @@ public class Weapon : MonoBehaviour
 					GameObject.Destroy(feipan.gameObject, 2);
 
 					// 更新分数值
-					m_nScore = m_nScore + 1;
+					int nScore = m_UiManager.GetScore();
+					m_UiManager.SetScore(nScore + 1);
 				}
 			}
 		}
@@ -68,23 +71,5 @@ public class Weapon : MonoBehaviour
 	public void ChangeMoveState(bool bCanMove)
 	{
 		m_bCanMove = bCanMove;
-	}
-
-	/// <summary>
-	/// 获取分数
-	/// </summary>
-	/// <returns></returns>
-	public int GetScore()
-	{
-		return m_nScore;
-	}
-
-	/// <summary>
-	/// 设置分数
-	/// </summary>
-	/// <param name="nScore"></param>
-	public void SetScore(int nScore)
-	{
-		m_nScore = nScore;
 	}
 }
