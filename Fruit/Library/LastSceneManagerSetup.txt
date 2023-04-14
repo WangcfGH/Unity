@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/ObjectSlicingGameExample/OSG_Scenes/OSG_ReleaseScenes/Scene_2_GameScene(ChillMode).unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
